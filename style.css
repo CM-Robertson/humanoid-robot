@@ -107,3 +107,5 @@ footer p { margin: 0; opacity: .9; }
 .speed-grid figcaption { text-align: center; font-weight: 600; color: var(--maroon); }
 .speed-grid .placeholder { font-size: 1.05rem; }
 @media (max-width: 800px) { .speed-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.plot-wide { max-width: 720px; margin: 20px auto 0; }
