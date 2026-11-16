@@ -102,11 +102,11 @@ footer p { margin: 0; opacity: .9; }
 .tp-degree { margin: 0 auto 14px; max-width: 46ch; font-size: .98rem; }
 .tp-sup, .tp-date { margin: 0; font-size: .95rem; color: var(--muted); }
 .caption.top { margin: 0 0 16px; }
-.speed-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.speed-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .speed-grid video { aspect-ratio: 16 / 9; }
 .speed-grid figcaption { text-align: center; font-weight: 600; color: var(--maroon); }
 .speed-grid .placeholder { font-size: 1.05rem; }
-@media (max-width: 800px) { .speed-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .speed-grid { grid-template-columns: 1fr; } }
 
 .plot-wide { max-width: 720px; margin: 20px auto 0; }
 
