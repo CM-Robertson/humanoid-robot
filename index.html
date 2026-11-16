@@ -64,8 +64,10 @@
         <!-- VIDEO SLOT: walking. Replace the placeholder div with:
              <video controls muted playsinline preload="metadata" poster="assets/video/walk_poster.jpg">
                <source src="assets/video/walk.mp4" type="video/mp4"></video> -->
-        <div class="placeholder video-ph">Walking on the robot &mdash; video added after submission</div>
-        <p class="meta">Recorded: <span class="tbc">to be added</span> &middot; Policy: deployed policy</p>
+        <video class="portrait" controls muted playsinline preload="metadata" poster="assets/video/walk_poster.jpg">
+          <source src="assets/video/walk.mp4" type="video/mp4">
+        </video>
+        <p class="meta">Recorded: on the lab floor, tethered to the gantry, walking towards the camera &middot; Policy: deployed policy</p>
         <p class="caption">The robot walked forward ten times on the floor, at commanded speeds of 0.35 and 0.5&nbsp;m/s, without a fall.</p>
       </article>
 
@@ -84,7 +86,7 @@
           </div>
         </div>
         <figure class="plot plot-wide">
-          <img src="assets/fig/stand_lean.svg" alt="Forward pitch of the base while standing: the deployed policy leans about 7 degrees; the fine-tuned policy about 1.4 degrees" loading="lazy">
+          <img src="assets/fig/stand_lean.svg?v=2" alt="Forward pitch of the base while standing: the deployed policy leans about 7 degrees; the fine-tuned policy about 1.4 degrees" loading="lazy">
         </figure>
         <p class="caption">The deployed policy stood with a slight forward lean, so one tether line stayed slightly taut. A short fine-tuning in simulation removed the lean: the forward pitch fell from 6.8° to 1.4°, and the robot stood twice for 120&nbsp;s with the tether lines completely slack.</p>
       </article>
@@ -101,7 +103,7 @@
           <source src="assets/video/sim_walk.mp4" type="video/mp4">
         </video>
         <img class="strip" src="assets/img/sim_strip.jpg" alt="Six frames over one gait cycle of the policy walking in simulation" loading="lazy">
-        <p class="caption">One gait cycle in six frames, 0.14&nbsp;s apart.</p>
+        <p class="caption">At a commanded 2&nbsp;m/s, the highest speed in training. One gait cycle in six frames, 0.14&nbsp;s apart.</p>
       </article>
 
       <div class="tiles" aria-label="Simulation results">
@@ -132,7 +134,7 @@
           <figure><div class="placeholder video-ph">0.5&nbsp;m/s</div><figcaption>0.5&nbsp;m/s</figcaption></figure>
           <figure><div class="placeholder video-ph">0.75&nbsp;m/s</div><figcaption>0.75&nbsp;m/s</figcaption></figure>
           <figure><div class="placeholder video-ph">1.0&nbsp;m/s</div><figcaption>1.0&nbsp;m/s</figcaption></figure>
-          <figure><div class="placeholder video-ph">2.0&nbsp;m/s</div><figcaption>2.0&nbsp;m/s</figcaption></figure>
+          <figure><video controls muted loop playsinline preload="metadata" poster="assets/video/sim_walk_poster.jpg"><source src="assets/video/sim_walk.mp4" type="video/mp4"></video><figcaption>2.0&nbsp;m/s</figcaption></figure>
         </div>
       </article>
 
