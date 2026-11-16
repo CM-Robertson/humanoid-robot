@@ -24,9 +24,14 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-text">
-        <h1>Design and Development of a Humanoid&nbsp;Robot</h1>
-        <p class="author">Connor Michael Robertson</p>
-        <p class="lead">A policy trained only in simulation stands and walks a full-sized humanoid robot built from scratch, through an in-house EtherCAT control stack.</p>
+        <div class="titlepage">
+          <h1>Design and Development of a Humanoid&nbsp;Robot</h1>
+          <p class="tp-by">by</p>
+          <p class="author">Connor Michael Robertson</p>
+          <p class="tp-degree">Thesis presented in partial fulfilment of the requirements for the degree of Master of Engineering (Research) in the Faculty of Engineering at Stellenbosch University</p>
+          <p class="tp-sup">Supervisor: Dr W.D. Duckitt</p>
+          <p class="tp-date">November 2026</p>
+        </div>
         <ul class="chips">
           <li><strong>10 walks</strong> on the robot without a fall</li>
           <li><strong>120&nbsp;s</strong> standing with the tether slack, after a short fine-tuning</li>
@@ -113,8 +118,25 @@
         </article>
       </div>
 
-      <!-- SLOT: additional simulation clips (e.g. pushes, turning). Remove if unused. -->
-      <div class="placeholder slim">More simulation clips &mdash; to follow</div>
+      <article class="card">
+        <h3>Walking at different speeds</h3>
+        <p class="caption top">The commanded speed changes the gait. Training used commands of up to 2&nbsp;m/s; the thesis evaluates speeds up to 1.0&nbsp;m/s.</p>
+        <div class="speed-grid">
+          <!-- VIDEO SLOTS: replace each placeholder div with
+               <video controls muted loop playsinline preload="metadata" poster="assets/video/sim_XXX_poster.jpg"><source src="assets/video/sim_XXX.mp4" type="video/mp4"></video> -->
+          <figure><div class="placeholder video-ph">0.5&nbsp;m/s</div><figcaption>0.5&nbsp;m/s</figcaption></figure>
+          <figure><div class="placeholder video-ph">0.75&nbsp;m/s</div><figcaption>0.75&nbsp;m/s</figcaption></figure>
+          <figure><div class="placeholder video-ph">1.0&nbsp;m/s</div><figcaption>1.0&nbsp;m/s</figcaption></figure>
+          <figure><div class="placeholder video-ph">2.0&nbsp;m/s</div><figcaption>2.0&nbsp;m/s</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Walking and turning</h3>
+        <!-- VIDEO SLOT: walking and turning in simulation. -->
+        <div class="placeholder video-ph">Walking and turning &mdash; video to follow</div>
+        <p class="caption">The policy follows a commanded direction of travel and facing direction while walking.</p>
+      </article>
     </section>
 
     <!-- ============================== THE PLATFORM ============================== -->
