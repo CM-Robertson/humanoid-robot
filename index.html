@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design and Development of a Humanoid Robot</title>
+  <meta name="description" content="A full-sized humanoid robot designed and built at Stellenbosch University, walking under a policy trained only in simulation.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">MEng (Research) &middot; Stellenbosch University &middot; 2026</p>
+      <h1>Design and Development of a Humanoid&nbsp;Robot</h1>
+      <p class="author">Connor Michael Robertson</p>
+      <p class="lead">A full-sized humanoid robot, designed and built from scratch, that stands and walks under a locomotion policy trained only in simulation, through an in-house EtherCAT control stack.</p>
+      <p class="status">Thesis under examination.</p>
+    </div>
+    <img class="hero-img" src="assets/img/robot.jpg" alt="The assembled humanoid robot hanging from its gantry in the lab" width="748" height="1280">
+  </header>
+
+  <main>
+    <section class="numbers" aria-label="Key numbers">
+      <div><span class="num">1.79&nbsp;m</span><span class="lbl">height</span></div>
+      <div><span class="num">30</span><span class="lbl">degrees of freedom designed, 26 built</span></div>
+      <div><span class="num">51&nbsp;kg</span><span class="lbl">mass (CAD model)</span></div>
+      <div><span class="num">1&nbsp;kHz</span><span class="lbl">EtherCAT cycle</span></div>
+      <div><span class="num">50&nbsp;Hz</span><span class="lbl">policy rate</span></div>
+    </section>
+
+    <section id="videos">
+      <h2>The policy in simulation</h2>
+
+      <figure class="video">
+        <video controls muted loop playsinline preload="metadata" poster="assets/video/sim_walk_poster.jpg">
+          <source src="assets/video/sim_walk.mp4" type="video/mp4">
+        </video>
+        <figcaption><strong>The policy in simulation.</strong> The locomotion policy walking in the Genesis simulator, where it was trained with reinforcement learning and a motion prior learned from human motion capture.</figcaption>
+      </figure>
+    </section>
+
+    <section id="about">
+      <h2>About the project</h2>
+      <p>Learned controllers for humanoid robots are trained in simulation, but they can only be proven on a physical robot. This project develops a full-sized humanoid whose hardware can be changed and whose control stack can be modified at every layer above the actuator firmware.</p>
+      <p>The robot uses commercial back-drivable actuators, selected from a torque analysis of a human walk. The actuators are connected over CAN to five EtherCAT slaves with firmware written for this robot, and an EtherCAT master and an EPICS control layer run on an off-robot computer.</p>
+      <p>A locomotion policy was trained in the Genesis simulator and checked in MuJoCo through the same runtime that runs on the robot. On the robot, tethered to a gantry, it stood for 120&nbsp;s and walked forward ten times without a fall.</p>
+    </section>
+
+    <section id="build">
+      <h2>From design to robot</h2>
+      <div class="gallery">
+        <figure><img src="assets/img/cad.png" alt="CAD model of the robot without covers" loading="lazy" width="460" height="796"><figcaption>CAD model, without covers</figcaption></figure>
+        <figure><img src="assets/img/prototype.jpg" alt="Full-scale 3D-printed prototype of the robot" loading="lazy" width="787" height="1400"><figcaption>3D-printed prototype</figcaption></figure>
+        <figure><img src="assets/img/machined.jpg" alt="The robot built from machined aluminium parts" loading="lazy" width="960" height="1280"><figcaption>Machined robot</figcaption></figure>
+        <figure><img src="assets/img/legs.jpg" alt="Close-up of the robot's legs" loading="lazy" width="960" height="1280"><figcaption>The legs</figcaption></figure>
+      </div>
+      <figure class="wide"><img src="assets/img/parallel_sim.jpg" alt="Many copies of the robot training in parallel in simulation" loading="lazy" width="1400" height="712"><figcaption>Training: many copies of the robot simulated in parallel in Genesis</figcaption></figure>
+    </section>
+
+    <section id="credits">
+      <h2>Credits</h2>
+      <p>Supervisor: Dr W.D. Duckitt. Hand: M.A.G. Smith. Head: J.P. de Freitas. Electronic Systems Laboratory, Department of Electrical and Electronic Engineering, Stellenbosch University.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Connor Michael Robertson</p>
+  </footer>
+</body>
+</html>
