@@ -3,68 +3,139 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>Design and Development of a Humanoid Robot</title>
-  <meta name="description" content="A full-sized humanoid robot designed and built at Stellenbosch University, walking under a policy trained only in simulation.">
+  <meta name="description" content="Results of an MEng thesis at Stellenbosch University: a full-sized humanoid robot that stands and walks under a policy trained only in simulation.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-text">
-      <p class="eyebrow">MEng (Research) &middot; Stellenbosch University &middot; 2026</p>
-      <h1>Design and Development of a Humanoid&nbsp;Robot</h1>
-      <p class="author">Connor Michael Robertson</p>
-      <p class="lead">A full-sized humanoid robot, designed and built from scratch, that stands and walks under a locomotion policy trained only in simulation, through an in-house EtherCAT control stack.</p>
-      <p class="status">Thesis under examination.</p>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <!-- Optional SU logo, only with permission: <img class="logo" src="assets/img/su-logo.svg" alt="Stellenbosch University"> -->
+      <div>
+        <p class="inst">Stellenbosch University &middot; Department of Electrical and Electronic Engineering &middot; Electronic Systems Laboratory</p>
+        <p class="degree">MEng (Research) thesis &middot; 2026 &middot; under examination</p>
+      </div>
     </div>
-    <img class="hero-img" src="assets/img/robot.jpg" alt="The assembled humanoid robot hanging from its gantry in the lab" width="748" height="1280">
   </header>
 
-  <main>
-    <section class="numbers" aria-label="Key numbers">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1>Design and Development of a Humanoid&nbsp;Robot</h1>
+        <p class="author">Connor Michael Robertson</p>
+        <p class="lead">A policy trained only in simulation stands and walks a full-sized humanoid robot built from scratch, through an in-house EtherCAT control stack.</p>
+        <ul class="chips">
+          <li><strong>10 walks</strong> on the robot without a fall</li>
+          <li><strong>120&nbsp;s</strong> standing with the tether slack, after a short fine-tuning</li>
+          <li><strong>No missed deadline</strong> in 61,749 control steps</li>
+        </ul>
+      </div>
+      <img class="hero-img" src="assets/img/robot.jpg" alt="The assembled humanoid robot on its gantry in the lab" width="748" height="1280">
+    </div>
+  </section>
+
+  <section class="numbers" aria-label="Key numbers">
+    <div class="wrap numbers-grid">
       <div><span class="num">1.79&nbsp;m</span><span class="lbl">height</span></div>
       <div><span class="num">30</span><span class="lbl">degrees of freedom designed, 26 built</span></div>
-      <div><span class="num">51&nbsp;kg</span><span class="lbl">mass (CAD model)</span></div>
+      <div><span class="num">51&nbsp;kg</span><span class="lbl">mass of the CAD model</span></div>
       <div><span class="num">1&nbsp;kHz</span><span class="lbl">EtherCAT cycle</span></div>
       <div><span class="num">50&nbsp;Hz</span><span class="lbl">policy rate</span></div>
+    </div>
+  </section>
+
+  <main class="wrap">
+
+    <!-- ============================== ON THE ROBOT ============================== -->
+    <section id="robot">
+      <h2>On the robot</h2>
+      <p class="section-lead">The policy runs on the physical robot through the same runtime that was tested in simulation. For safety, the robot was tethered to a gantry.</p>
+
+      <article class="card">
+        <h3>Walking</h3>
+        <!-- VIDEO SLOT: walking. Replace the placeholder div with:
+             <video controls muted playsinline preload="metadata" poster="assets/video/walk_poster.jpg">
+               <source src="assets/video/walk.mp4" type="video/mp4"></video> -->
+        <div class="placeholder video-ph">Walking on the robot &mdash; video added after submission</div>
+        <p class="meta">Recorded: <span class="tbc">to be added</span> &middot; Policy: deployed policy</p>
+        <p class="caption">The robot walked forward ten times on the floor, at commanded speeds of 0.35 and 0.5&nbsp;m/s, without a fall.</p>
+      </article>
+
+      <article class="card">
+        <h3>Standing without the lean</h3>
+        <div class="two-col">
+          <div>
+            <!-- VIDEO SLOT: fine-tuned stand. Replace the placeholder div with a <video> element as above. -->
+            <div class="placeholder video-ph">Standing with the tether slack &mdash; video to follow</div>
+            <p class="meta">Recorded: <span class="tbc">to be added</span> &middot; Policy: fine-tuned stand policy</p>
+          </div>
+          <figure class="plot">
+            <img src="assets/fig/stand_lean.svg" alt="Forward pitch of the base while standing: the deployed policy leans about 7 degrees; the fine-tuned policy about 1.4 degrees" loading="lazy">
+          </figure>
+        </div>
+        <p class="caption">The deployed policy stood with a slight forward lean, so one tether line stayed slightly taut. A short fine-tuning in simulation removed the lean: the forward pitch fell from 6.8° to 1.4°, and the robot stood twice for 120&nbsp;s with the tether lines completely slack.</p>
+      </article>
     </section>
 
-    <section id="videos">
-      <h2>The policy in simulation</h2>
+    <!-- ============================== IN SIMULATION ============================== -->
+    <section id="simulation">
+      <h2>In simulation</h2>
+      <p class="section-lead">The policy was trained with reinforcement learning in the Genesis simulator, with a motion prior learned from human motion capture shaping its walking style.</p>
 
-      <figure class="video">
+      <article class="card">
+        <h3>The policy walking in Genesis</h3>
         <video controls muted loop playsinline preload="metadata" poster="assets/video/sim_walk_poster.jpg">
           <source src="assets/video/sim_walk.mp4" type="video/mp4">
         </video>
-        <figcaption><strong>The policy in simulation.</strong> The locomotion policy walking in the Genesis simulator, where it was trained with reinforcement learning and a motion prior learned from human motion capture.</figcaption>
-      </figure>
-    </section>
+        <img class="strip" src="assets/img/sim_strip.jpg" alt="Six frames over one gait cycle of the policy walking in simulation" loading="lazy">
+        <p class="caption">One gait cycle in six frames, 0.14&nbsp;s apart.</p>
+      </article>
 
-    <section id="about">
-      <h2>About the project</h2>
-      <p>Learned controllers for humanoid robots are trained in simulation, but they can only be proven on a physical robot. This project develops a full-sized humanoid whose hardware can be changed and whose control stack can be modified at every layer above the actuator firmware.</p>
-      <p>The robot uses commercial back-drivable actuators, selected from a torque analysis of a human walk. The actuators are connected over CAN to five EtherCAT slaves with firmware written for this robot, and an EtherCAT master and an EPICS control layer run on an off-robot computer.</p>
-      <p>A locomotion policy was trained in the Genesis simulator and checked in MuJoCo through the same runtime that runs on the robot. On the robot, tethered to a gantry, it stood for 120&nbsp;s and walked forward ten times without a fall.</p>
-    </section>
-
-    <section id="build">
-      <h2>From design to robot</h2>
-      <div class="gallery">
-        <figure><img src="assets/img/cad.png" alt="CAD model of the robot without covers" loading="lazy" width="460" height="796"><figcaption>CAD model, without covers</figcaption></figure>
-        <figure><img src="assets/img/prototype.jpg" alt="Full-scale 3D-printed prototype of the robot" loading="lazy" width="787" height="1400"><figcaption>3D-printed prototype</figcaption></figure>
-        <figure><img src="assets/img/machined.jpg" alt="The robot built from machined aluminium parts" loading="lazy" width="960" height="1280"><figcaption>Machined robot</figcaption></figure>
-        <figure><img src="assets/img/legs.jpg" alt="Close-up of the robot's legs" loading="lazy" width="960" height="1280"><figcaption>The legs</figcaption></figure>
+      <div class="tiles" aria-label="Simulation results">
+        <div><span class="num">0.98&nbsp;m/s</span><span class="lbl">walking speed at a 1.0&nbsp;m/s command</span></div>
+        <div><span class="num">&lt;&nbsp;0.2&nbsp;%</span><span class="lbl">of episodes fell, at any command</span></div>
+        <div><span class="num">584</span><span class="lbl">episodes in a second simulator, MuJoCo, without a fall</span></div>
       </div>
-      <figure class="wide"><img src="assets/img/parallel_sim.jpg" alt="Many copies of the robot training in parallel in simulation" loading="lazy" width="1400" height="712"><figcaption>Training: many copies of the robot simulated in parallel in Genesis</figcaption></figure>
+
+      <div class="two-col">
+        <article class="card plot-card">
+          <h3>Speed tracking</h3>
+          <figure class="plot"><img src="assets/fig/speed_tracking.svg" alt="Achieved against commanded forward speed in Genesis and MuJoCo" loading="lazy"></figure>
+          <p class="caption">At a 1.0&nbsp;m/s command the policy walks at 0.98&nbsp;m/s; at lower commands it walks slower than commanded.</p>
+        </article>
+        <article class="card plot-card">
+          <h3>Training</h3>
+          <figure class="plot"><img src="assets/fig/training_curves.png" alt="Episode length, fall fraction and style reward over the four training stages" loading="lazy"></figure>
+          <p class="caption">Episode length, fall fraction and style reward over the four training stages.</p>
+        </article>
+      </div>
+
+      <!-- SLOT: additional simulation clips (e.g. pushes, turning). Remove if unused. -->
+      <div class="placeholder slim">More simulation clips &mdash; to follow</div>
+    </section>
+
+    <!-- ============================== THE PLATFORM ============================== -->
+    <section id="platform">
+      <h2>The platform</h2>
+      <div class="gallery">
+        <figure><img src="assets/img/cad.png" alt="CAD model of the robot without covers" loading="lazy"><figcaption>CAD model</figcaption></figure>
+        <figure><img src="assets/img/prototype.jpg" alt="Full-scale 3D-printed prototype" loading="lazy"><figcaption>3D-printed prototype</figcaption></figure>
+        <figure><img src="assets/img/machined.jpg" alt="The robot built from machined aluminium parts" loading="lazy"><figcaption>Machined robot</figcaption></figure>
+        <figure><img src="assets/img/legs.jpg" alt="Close-up of the robot's legs" loading="lazy"><figcaption>The legs</figcaption></figure>
+      </div>
+      <figure class="wide"><img src="assets/img/parallel_sim.jpg" alt="Many copies of the robot training in parallel in Genesis" loading="lazy"><figcaption>Training: many copies of the robot simulated in parallel in Genesis.</figcaption></figure>
     </section>
 
     <section id="credits">
       <h2>Credits</h2>
-      <p>Supervisor: Dr W.D. Duckitt. Hand: M.A.G. Smith. Head: J.P. de Freitas. Electronic Systems Laboratory, Department of Electrical and Electronic Engineering, Stellenbosch University.</p>
+      <p>Supervisor: Dr W.D. Duckitt. Hand: M.A.G. Smith. Head: J.P. de Freitas. Electronic Systems Laboratory, Stellenbosch University.</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Connor Michael Robertson</p>
+    <div class="wrap"><p>This page accompanies the thesis for its examination and will be removed afterwards. &copy; 2026 Connor Michael Robertson</p></div>
   </footer>
 </body>
 </html>
