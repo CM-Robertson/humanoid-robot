@@ -61,9 +61,6 @@
 
       <article class="card">
         <h3>Walking</h3>
-        <!-- VIDEO SLOT: walking. Replace the placeholder div with:
-             <video controls muted playsinline preload="metadata" poster="assets/video/walk_poster.jpg">
-               <source src="assets/video/walk.mp4" type="video/mp4"></video> -->
         <video class="portrait" controls muted playsinline preload="metadata" poster="assets/video/walk_poster.jpg">
           <source src="assets/video/walk.mp4" type="video/mp4">
         </video>
@@ -75,14 +72,12 @@
         <h3>Standing, before and after removing the lean</h3>
         <div class="two-col">
           <div>
-            <!-- VIDEO SLOT: standing with the deployed policy (slight lean). Replace the placeholder div with a <video> element. -->
-            <div class="placeholder video-ph">Standing with the deployed policy &mdash; video to follow</div>
-            <p class="meta">Recorded: <span class="tbc">to be added</span> &middot; Policy: deployed policy (slight forward lean)</p>
+            <video class="stand" controls muted playsinline preload="metadata" poster="assets/video/stand_lean_poster.jpg"><source src="assets/video/stand_lean.mp4" type="video/mp4"></video>
+            <p class="meta">Recorded: on the lab floor, tethered to the gantry; ends with the tether lines checked by hand &middot; Policy: deployed policy (slight forward lean, one line taut)</p>
           </div>
           <div>
-            <!-- VIDEO SLOT: fine-tuned stand, tether slack. Replace the placeholder div with a <video> element. -->
-            <div class="placeholder video-ph">Standing with the tether slack &mdash; video to follow</div>
-            <p class="meta">Recorded: <span class="tbc">to be added</span> &middot; Policy: fine-tuned stand policy</p>
+            <video class="stand" controls muted playsinline preload="metadata" poster="assets/video/stand_no_lean_poster.jpg"><source src="assets/video/stand_no_lean.mp4" type="video/mp4"></video>
+            <p class="meta">Recorded: on the lab floor, tethered to the gantry; ends with the tether lines checked by hand &middot; Policy: fine-tuned stand policy (lines slack)</p>
           </div>
         </div>
         <figure class="plot plot-wide">
@@ -129,8 +124,6 @@
         <h3>Walking at different speeds</h3>
         <p class="caption top">The policy walking in Genesis at four commanded forward speeds, filmed from the side; the measured speed is the average over the walk. Training used commands of up to 2&nbsp;m/s; the thesis evaluates speeds up to 1.0&nbsp;m/s.</p>
         <div class="speed-grid">
-          <!-- VIDEO SLOTS: replace each placeholder div with
-               <video controls muted loop playsinline preload="metadata" poster="assets/video/sim_XXX_poster.jpg"><source src="assets/video/sim_XXX.mp4" type="video/mp4"></video> -->
           <figure><video controls muted loop playsinline preload="metadata" poster="assets/video/sim_050_poster.jpg"><source src="assets/video/sim_050.mp4" type="video/mp4"></video><figcaption>0.5&nbsp;m/s <span class="measured">(measured 0.42&nbsp;m/s)</span></figcaption></figure>
           <figure><video controls muted loop playsinline preload="metadata" poster="assets/video/sim_075_poster.jpg"><source src="assets/video/sim_075.mp4" type="video/mp4"></video><figcaption>0.75&nbsp;m/s <span class="measured">(measured 0.70&nbsp;m/s)</span></figcaption></figure>
           <figure><video controls muted loop playsinline preload="metadata" poster="assets/video/sim_100_poster.jpg"><source src="assets/video/sim_100.mp4" type="video/mp4"></video><figcaption>1.0&nbsp;m/s <span class="measured">(measured 0.98&nbsp;m/s)</span></figcaption></figure>
@@ -140,7 +133,6 @@
 
       <article class="card">
         <h3>Walking and turning</h3>
-        <!-- VIDEO SLOT: walking and turning in simulation. -->
         <video controls muted loop playsinline preload="metadata" poster="assets/video/sim_turn_poster.jpg">
           <source src="assets/video/sim_turn.mp4" type="video/mp4">
         </video>
